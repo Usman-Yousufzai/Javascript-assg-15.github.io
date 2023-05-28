@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tableContainer"></div>
+
+    <script>
+        var A = parseInt(prompt("How many students do you want to add?"));
+        var tableHTML = "<table><tr><th>Roll No</th><th>Name</th><th>Remarks</th></tr>";
+        for (var i = 1; i <= A; i++) {
+            var rollNo = parseInt(prompt("Enter the Roll No of Student " + i));
+            var name = prompt("Enter the Name of User " + i);
+            var remarks = parseInt(prompt("Enter the Remarks of Student " + i));
+            tableHTML += "<tr><td>" + rollNo + "</td><td>" + name + "</td><td>" + remarks + "</td></tr>";
+        }
+        tableHTML += "</table>";
+        document.getElementById("tableContainer").innerHTML = tableHTML;
+    </script>
+</body>
+
+</html>
